@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LaRosa's Pizzeria | West Hempstead, NY</title>
+    <meta name="description" content="Authentic Italian cuisine and wood-fired pizza in West Hempstead. Family owned since 1985. Order online for takeout and delivery.">
+    
+    <!-- Tailwind CSS (CDN for simplicity, typically moved to postcss in larger scale apps) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'larosa-tomato': '#D32F2F',
+              'larosa-wood': '#3E2723',
+              'larosa-gold': '#DAA520',
+              'larosa-cream': '#FFF8E1',
+            },
+            fontFamily: {
+              serif: ['"Playfair Display"', 'serif'],
+              sans: ['"Lato"', 'sans-serif'],
+            },
+            animation: {
+              'slow-zoom': 'zoom 20s infinite alternate',
+              'fade-in-up': 'fadeInUp 1s ease-out forwards',
+            },
+            keyframes: {
+              zoom: {
+                '0%': { transform: 'scale(1)' },
+                '100%': { transform: 'scale(1.1)' },
+              },
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+
+<link rel="stylesheet" href="/index.css">
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "vite": "https://aistudiocdn.com/vite@^7.2.6",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/LaRosa-Pizzeria/assets/index-A5Ej25D8.js"></script>
+</head>
+  <body class="bg-larosa-cream text-gray-900 selection:bg-larosa-gold selection:text-larosa-wood">
+    <div id="root"></div>
+  </body>
+</html>
