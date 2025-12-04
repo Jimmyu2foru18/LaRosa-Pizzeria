@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { HashRouter } from 'react-router-dom';
 import { Navigation } from './components/Navigation';
 import { Hero } from './components/Hero';
 import { MenuDisplay } from './components/MenuDisplay';
@@ -316,78 +315,76 @@ const App: React.FC = () => {
   };
 
   return (
-    <HashRouter>
-      <div className="min-h-screen flex flex-col bg-larosa-cream font-sans">
-        <Navigation 
-          cartCount={totalCartCount} 
-          onCartClick={() => setIsCartOpen(true)}
-          currentPage={currentPage}
-          onNavigate={setCurrentPage}
-        />
-        
-        <main className="flex-grow">
-          {renderContent()}
-        </main>
+    <div className="min-h-screen flex flex-col bg-larosa-cream font-sans">
+      <Navigation 
+        cartCount={totalCartCount} 
+        onCartClick={() => setIsCartOpen(true)}
+        currentPage={currentPage}
+        onNavigate={setCurrentPage}
+      />
+      
+      <main className="flex-grow">
+        {renderContent()}
+      </main>
 
-        <footer className="bg-larosa-wood text-gray-400 py-16 border-t border-white/10">
-          <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-12">
-            <div className="col-span-1 md:col-span-2">
-               <div className="mb-6 bg-white p-2 inline-block rounded-lg">
-                  <img src="https://www.larosaspizzeria.com/wordpress/wp-content/themes/html5blank-stable/img/logo-larosas-pizzeria-west-hempstead.png" alt={RESTAURANT_INFO.name} className="h-16 w-auto" />
-               </div>
-               <p className="text-sm leading-relaxed max-w-xs mb-6">West Hempstead's favorite slice since 1985. Family owned, community focused.</p>
-               <div className="flex space-x-4">
-                <Facebook className="w-5 h-5 hover:text-larosa-gold cursor-pointer transition-colors" />
-                <Instagram className="w-5 h-5 hover:text-larosa-gold cursor-pointer transition-colors" />
-                <Twitter className="w-5 h-5 hover:text-larosa-gold cursor-pointer transition-colors" />
+      <footer className="bg-larosa-wood text-gray-400 py-16 border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-12">
+          <div className="col-span-1 md:col-span-2">
+              <div className="mb-6 bg-white p-2 inline-block rounded-lg">
+                <img src="https://www.larosaspizzeria.com/wordpress/wp-content/themes/html5blank-stable/img/logo-larosas-pizzeria-west-hempstead.png" alt={RESTAURANT_INFO.name} className="h-16 w-auto" />
               </div>
+              <p className="text-sm leading-relaxed max-w-xs mb-6">West Hempstead's favorite slice since 1985. Family owned, community focused.</p>
+              <div className="flex space-x-4">
+              <Facebook className="w-5 h-5 hover:text-larosa-gold cursor-pointer transition-colors" />
+              <Instagram className="w-5 h-5 hover:text-larosa-gold cursor-pointer transition-colors" />
+              <Twitter className="w-5 h-5 hover:text-larosa-gold cursor-pointer transition-colors" />
             </div>
-            <div>
-              <h4 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">Quick Links</h4>
-              <ul className="space-y-3 text-sm">
-                <li><button onClick={() => setCurrentPage('home')} className="hover:text-larosa-gold transition-colors">Home</button></li>
-                <li><button onClick={() => setCurrentPage('menu')} className="hover:text-larosa-gold transition-colors">Takeout Menu</button></li>
-                <li><button onClick={() => setCurrentPage('catering')} className="hover:text-larosa-gold transition-colors">Catering</button></li>
-                <li><button onClick={() => setCurrentPage('coupons')} className="hover:text-larosa-gold transition-colors">Coupons</button></li>
-                <li><button onClick={() => setCurrentPage('contact')} className="hover:text-larosa-gold transition-colors">Contact</button></li>
+          </div>
+          <div>
+            <h4 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">Quick Links</h4>
+            <ul className="space-y-3 text-sm">
+              <li><button onClick={() => setCurrentPage('home')} className="hover:text-larosa-gold transition-colors">Home</button></li>
+              <li><button onClick={() => setCurrentPage('menu')} className="hover:text-larosa-gold transition-colors">Takeout Menu</button></li>
+              <li><button onClick={() => setCurrentPage('catering')} className="hover:text-larosa-gold transition-colors">Catering</button></li>
+              <li><button onClick={() => setCurrentPage('coupons')} className="hover:text-larosa-gold transition-colors">Coupons</button></li>
+              <li><button onClick={() => setCurrentPage('contact')} className="hover:text-larosa-gold transition-colors">Contact</button></li>
+            </ul>
+          </div>
+          <div>
+              <h4 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">Hours</h4>
+              <ul className="space-y-2 text-sm">
+                <li className="flex justify-between"><span>Mon - Thu</span> <span className="text-white">11am - 10pm</span></li>
+                <li className="flex justify-between"><span>Fri - Sat</span> <span className="text-white">11am - 11pm</span></li>
+                <li className="flex justify-between"><span>Sunday</span> <span className="text-white">12pm - 10pm</span></li>
               </ul>
-            </div>
-            <div>
-               <h4 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">Hours</h4>
-               <ul className="space-y-2 text-sm">
-                 <li className="flex justify-between"><span>Mon - Thu</span> <span className="text-white">11am - 10pm</span></li>
-                 <li className="flex justify-between"><span>Fri - Sat</span> <span className="text-white">11am - 11pm</span></li>
-                 <li className="flex justify-between"><span>Sunday</span> <span className="text-white">12pm - 10pm</span></li>
-               </ul>
-               <div className="mt-6 pt-6 border-t border-white/10">
-                 <button onClick={() => setCurrentPage('careers')} className="text-larosa-gold hover:text-white transition-colors text-sm flex items-center">
-                    <ChefHat className="w-4 h-4 mr-2" /> Employment Opportunities
-                 </button>
-               </div>
-            </div>
+              <div className="mt-6 pt-6 border-t border-white/10">
+                <button onClick={() => setCurrentPage('careers')} className="text-larosa-gold hover:text-white transition-colors text-sm flex items-center">
+                  <ChefHat className="w-4 h-4 mr-2" /> Employment Opportunities
+                </button>
+              </div>
           </div>
-          <div className="max-w-7xl mx-auto px-4 mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs">
-            <p>&copy; {new Date().getFullYear()} LaRosa's Restaurant & Pizzeria. All rights reserved.</p>
-            <button 
-              onClick={() => setCurrentPage('employee')} 
-              className="mt-4 md:mt-0 flex items-center text-gray-600 hover:text-gray-400 transition-colors"
-            >
-              <Lock className="w-3 h-3 mr-1" /> Staff Login
-            </button>
-          </div>
-        </footer>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs">
+          <p>&copy; {new Date().getFullYear()} LaRosa's Restaurant & Pizzeria. All rights reserved.</p>
+          <button 
+            onClick={() => setCurrentPage('employee')} 
+            className="mt-4 md:mt-0 flex items-center text-gray-600 hover:text-gray-400 transition-colors"
+          >
+            <Lock className="w-3 h-3 mr-1" /> Staff Login
+          </button>
+        </div>
+      </footer>
 
-        <CartDrawer 
-          isOpen={isCartOpen} 
-          onClose={() => setIsCartOpen(false)}
-          items={cartItems}
-          onRemoveItem={removeFromCart}
-          onUpdateQuantity={updateQuantity}
-        />
+      <CartDrawer 
+        isOpen={isCartOpen} 
+        onClose={() => setIsCartOpen(false)}
+        items={cartItems}
+        onRemoveItem={removeFromCart}
+        onUpdateQuantity={updateQuantity}
+      />
 
-        <ChatBot />
-      </div>
-    </HashRouter>
+      <ChatBot />
+    </div>
   );
 };
 
