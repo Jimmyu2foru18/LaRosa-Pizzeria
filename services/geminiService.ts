@@ -1,6 +1,13 @@
 import { GoogleGenAI, Chat } from "@google/genai";
 import { MENU_ITEMS, RESTAURANT_INFO } from '../constants';
 
+// Declare process to satisfy TS without installing node types
+declare var process: {
+  env: {
+    API_KEY: string;
+  }
+};
+
 // Initialize the client
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
@@ -64,7 +71,8 @@ export const sendMessageToGemini = async (message: string): Promise<string> => {
     const result = await chatSession.sendMessage({
         message: message
     });
-    return result.text;
+    // Ensure we always return a string
+    return result.text || "Sorry, I didn't catch that.";
   } catch (error) {
     console.error("Gemini API Error:", error);
     return "It's loud in here! Could you repeat that?";

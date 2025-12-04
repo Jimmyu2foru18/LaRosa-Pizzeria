@@ -6,7 +6,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
   return {
     plugins: [react()],
-    base: './', // Ensures assets are loaded correctly on GitHub Pages (relative paths)
+    base: '/LaRosa-Pizzeria/', // Exact match for https://Jimmyu2foru18.github.io/LaRosa-Pizzeria
     define: {
       // Polyfill process.env for the codebase usage
       'process.env.API_KEY': JSON.stringify(env.API_KEY || '')

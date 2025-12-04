@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { MENU_ITEMS } from '../constants';
 import { Category, MenuItem, MenuSection, PriceVariant } from '../types';
-import { Plus, Leaf, Flame, Star, Info, ChevronLeft, ChevronRight, Utensils, PartyPopper, Search, XCircle } from 'lucide-react';
+import { Plus, Leaf, Flame, ChevronLeft, ChevronRight, Utensils, PartyPopper, Search, XCircle } from 'lucide-react';
 
 interface MenuDisplayProps {
   onAddToCart: (item: MenuItem, variant?: PriceVariant) => void;

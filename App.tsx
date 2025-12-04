@@ -9,7 +9,7 @@ import { ChatBot } from './components/ChatBot';
 import { EmployeePortal } from './components/EmployeePortal';
 import { Careers } from './components/Careers';
 import { MenuItem, CartItem, PriceVariant } from './types';
-import { MapPin, Phone, Clock, Facebook, Instagram, Twitter, Lock, Mail, ExternalLink, ChefHat, Navigation as NavIcon, X, ZoomIn } from 'lucide-react';
+import { MapPin, Phone, Clock, Facebook, Instagram, Twitter, Lock, Mail, ChefHat, X, ZoomIn } from 'lucide-react';
 import { RESTAURANT_INFO } from './constants';
 
 const App: React.FC = () => {

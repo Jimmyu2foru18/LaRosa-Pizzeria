@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { CartItem, CustomerDetails, OrderType, PaymentMethod } from '../types';
-import { X, Trash2, ShoppingBag, Truck, Store, CreditCard, Banknote, ArrowRight, ArrowLeft, CheckCircle } from 'lucide-react';
+import { X, Trash2, ShoppingBag, Truck, Store, CreditCard, Banknote, ArrowRight, CheckCircle } from 'lucide-react';
 
 interface CartDrawerProps {
   isOpen: boolean;
