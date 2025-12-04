@@ -58,8 +58,8 @@ export const ChatBot: React.FC = () => {
       {/* Trigger Button */}
       <button
         onClick={() => setIsOpen(true)}
-        className={`fixed bottom-6 right-6 z-50 p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 ${
-          isOpen ? 'hidden' : 'bg-larosa-red text-white flex items-center gap-2'
+        className={`fixed bottom-6 right-6 z-[100] p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 ${
+          isOpen ? 'hidden' : 'bg-larosa-tomato text-white flex items-center gap-2'
         }`}
       >
         <MessageCircle className="w-6 h-6" />
@@ -68,9 +68,9 @@ export const ChatBot: React.FC = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 z-50 w-full max-w-sm bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden flex flex-col animate-in fade-in slide-in-from-bottom-10 duration-300 h-[500px]">
+        <div className="fixed bottom-6 right-6 z-[100] w-full max-w-sm bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden flex flex-col animate-in fade-in slide-in-from-bottom-10 duration-300 h-[500px]">
           {/* Header */}
-          <div className="bg-larosa-red p-4 flex justify-between items-center text-white">
+          <div className="bg-larosa-tomato p-4 flex justify-between items-center text-white">
             <div className="flex items-center gap-3">
               <div className="bg-white/20 p-2 rounded-full">
                 <Bot className="w-6 h-6" />
@@ -98,7 +98,7 @@ export const ChatBot: React.FC = () => {
                 <div
                   className={`max-w-[80%] rounded-2xl px-4 py-2 text-sm shadow-sm ${
                     msg.role === 'user'
-                      ? 'bg-larosa-red text-white rounded-br-none'
+                      ? 'bg-larosa-tomato text-white rounded-br-none'
                       : 'bg-white text-gray-800 border border-gray-200 rounded-bl-none'
                   }`}
                 >
@@ -126,12 +126,12 @@ export const ChatBot: React.FC = () => {
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyPress}
                 placeholder="Ask about our special sauce..."
-                className="flex-1 px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:border-larosa-red focus:ring-1 focus:ring-larosa-red text-sm"
+                className="flex-1 px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:border-larosa-tomato focus:ring-1 focus:ring-larosa-tomato text-sm"
               />
               <button
                 onClick={handleSend}
                 disabled={isLoading || !input.trim()}
-                className="bg-gray-900 text-white p-2 rounded-full hover:bg-larosa-red disabled:opacity-50 disabled:hover:bg-gray-900 transition-colors"
+                className="bg-gray-900 text-white p-2 rounded-full hover:bg-larosa-tomato disabled:opacity-50 disabled:hover:bg-gray-900 transition-colors"
               >
                 <Send className="w-5 h-5" />
               </button>

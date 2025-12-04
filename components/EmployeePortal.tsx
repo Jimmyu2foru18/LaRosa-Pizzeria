@@ -68,7 +68,8 @@ export const EmployeePortal: React.FC = () => {
             </button>
           </form>
           <div className="mt-8 text-center text-xs text-gray-400">
-             Authorized Personnel Only
+             <p>Authorized Personnel Only</p>
+             <p className="mt-2 text-larosa-tomato font-mono">(Demo PINs: 1985, 1234, 0000)</p>
           </div>
         </div>
       </div>

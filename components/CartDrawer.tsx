@@ -52,7 +52,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
           {step === 'cart' && 'Your Order'}
           {step === 'method' && 'How would you like it?'}
           {step === 'details' && 'Your Details'}
-          {step === 'payment' && 'Payment'}
+          {step === 'payment' && 'Payment Preference'}
           {step === 'success' && 'Order Confirmed'}
         </h2>
       </div>
@@ -265,7 +265,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
           onClick={() => setStep('payment')}
           className="w-full bg-larosa-wood text-white py-4 rounded-lg font-bold text-lg hover:bg-gray-800 transition-colors flex items-center justify-center"
         >
-          Go to Payment <ArrowRight className="w-5 h-5 ml-2" />
+          Proceed to Payment <ArrowRight className="w-5 h-5 ml-2" />
         </button>
         <button onClick={() => setStep('method')} className="w-full mt-4 py-2 text-gray-500 hover:text-gray-900 font-medium">Back</button>
       </div>
@@ -292,12 +292,12 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
           </div>
         )}
         <div className="flex justify-between text-lg font-bold text-larosa-wood mt-2 pt-2 border-t border-gray-100">
-          <span>Total</span>
+          <span>Total Due</span>
           <span>${total.toFixed(2)}</span>
         </div>
       </div>
 
-      <h3 className="font-bold text-gray-900 mb-4">Payment Method</h3>
+      <h3 className="font-bold text-gray-900 mb-4">How will you pay {orderType === 'pickup' ? 'at pickup' : 'upon delivery'}?</h3>
       <div className="space-y-3 mb-6">
         <button
           onClick={() => setPaymentMethod('card')}
@@ -305,7 +305,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
             paymentMethod === 'card' ? 'border-larosa-tomato bg-white' : 'border-gray-200 bg-gray-50'
           }`}
         >
-           <span className="flex items-center font-medium"><CreditCard className="w-5 h-5 mr-3" /> Credit Card</span>
+           <span className="flex items-center font-medium"><CreditCard className="w-5 h-5 mr-3" /> Pay with Card (In Person)</span>
            {paymentMethod === 'card' && <div className="w-3 h-3 bg-larosa-tomato rounded-full" />}
         </button>
         <button
@@ -314,28 +314,22 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
             paymentMethod === 'cash' ? 'border-larosa-tomato bg-white' : 'border-gray-200 bg-gray-50'
           }`}
         >
-           <span className="flex items-center font-medium"><Banknote className="w-5 h-5 mr-3" /> Cash on {orderType === 'pickup' ? 'Pickup' : 'Delivery'}</span>
+           <span className="flex items-center font-medium"><Banknote className="w-5 h-5 mr-3" /> Pay with Cash</span>
            {paymentMethod === 'cash' && <div className="w-3 h-3 bg-larosa-tomato rounded-full" />}
         </button>
       </div>
 
-      {paymentMethod === 'card' && (
-        <div className="space-y-4 mb-8">
-           <input type="text" placeholder="Card Number" className="w-full p-3 border border-gray-300 rounded-lg bg-white" />
-           <div className="grid grid-cols-2 gap-4">
-             <input type="text" placeholder="MM/YY" className="w-full p-3 border border-gray-300 rounded-lg bg-white" />
-             <input type="text" placeholder="CVC" className="w-full p-3 border border-gray-300 rounded-lg bg-white" />
-           </div>
-           <input type="text" placeholder="Cardholder Name" className="w-full p-3 border border-gray-300 rounded-lg bg-white" />
-        </div>
-      )}
+      <div className="p-4 bg-blue-50 text-blue-800 text-sm rounded-lg mb-8">
+         <p className="font-bold mb-1">Note:</p>
+         <p>You are not charged now. Payment is collected when you receive your order.</p>
+      </div>
 
       <div className="mt-auto">
         <button
           onClick={handlePlaceOrder}
           className="w-full bg-green-600 text-white py-4 rounded-lg font-bold text-lg hover:bg-green-700 transition-colors shadow-lg"
         >
-          Place Order (${total.toFixed(2)})
+          Confirm Order (${total.toFixed(2)})
         </button>
         <button onClick={() => setStep('details')} className="w-full mt-4 py-2 text-gray-500 hover:text-gray-900 font-medium">Back</button>
       </div>
@@ -359,6 +353,11 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
          
          <p className="text-sm text-gray-500 mb-1">Estimated Time</p>
          <p className="text-xl font-bold text-larosa-tomato">{orderType === 'delivery' ? '45-60' : '20-30'} Minutes</p>
+
+         <div className="mt-4 pt-4 border-t border-gray-200">
+            <p className="text-sm text-gray-500">Amount Due {orderType === 'pickup' ? 'at Counter' : 'on Delivery'}</p>
+            <p className="text-lg font-bold text-gray-900">${total.toFixed(2)} ({paymentMethod === 'card' ? 'Card' : 'Cash'})</p>
+         </div>
        </div>
 
        <button onClick={reset} className="px-8 py-3 border-2 border-larosa-wood text-larosa-wood font-bold rounded-full hover:bg-larosa-wood hover:text-white transition-colors">
