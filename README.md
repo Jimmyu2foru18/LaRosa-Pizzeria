@@ -1,5 +1,6 @@
 # LaRosa’s Pizzeria
 [![Live Demo](https://img.shields.io/badge/Live_Demo-Available_-brightgreen)](https://jimmyu2foru18.github.io/LaRosa-Pizzeria/) [![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-Deployed-blue)](https://github.com/Jimmyu2foru18/LaRosa-Pizzeria/deployments)
+
 ## Overview
 
 **LaRosa’s Pizzeria** is a modern, full‑stack capable web application designed for the fictional LaRosa’s Pizzeria in West Hempstead, NY. This project features a responsive menu, interactive shopping cart experience, AI‑powered concierge assistant (“Luigi”), and a secure employee portal — all built with React, TypeScript, and Tailwind CSS.
