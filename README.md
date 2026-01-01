@@ -2,7 +2,7 @@
 
 A modern, full-stack capable web application for LaRosa's Pizzeria in West Hempstead, NY. This project features a responsive menu, interactive shopping cart, AI-powered concierge ("Luigi"), and a complete employee portal.
 
-## 🚀 Features
+## Features
 
 *   **Interactive Menu**: Filter by category, vegetarian/spicy tags, and search functionality.
 *   **Smart Cart**: Handles complex pizza toppings, half/full tray catering logic, and sales tax calculations.
@@ -11,7 +11,7 @@ A modern, full-stack capable web application for LaRosa's Pizzeria in West Hemps
 *   **Responsive Design**: Mobile-first architecture using Tailwind CSS.
 *   **Catering & Events**: Dedicated sections for party planning and bulk ordering.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 *   **Frontend**: React 18, TypeScript, Vite
 *   **Styling**: Tailwind CSS
@@ -19,7 +19,7 @@ A modern, full-stack capable web application for LaRosa's Pizzeria in West Hemps
 *   **Icons**: Lucide React
 *   **Routing**: React Router DOM
 
-## 📦 Installation
+## Installation
 
 1.  Clone the repository:
     ```bash
@@ -44,17 +44,3 @@ A modern, full-stack capable web application for LaRosa's Pizzeria in West Hemps
     npm run dev
     ```
 
-## 🚀 Deployment
-
-This project is configured for **GitHub Pages**.
-
-1.  Ensure your `vite.config.ts` has the correct `base` path (currently set to `./` for relative paths).
-2.  Run the deploy script:
-    ```bash
-    npm run deploy
-    ```
-    This command builds the project to the `dist` folder and pushes it to the `gh-pages` branch.
-
-## 📄 License
-
-All rights reserved. LaRosa's Pizzeria.
